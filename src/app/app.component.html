@@ -1,0 +1,18 @@
+<h3>Template Driven Approach</h3>
+<form (ngSubmit)="onSubmitTemplateDriven()" #templateForm="ngForm">
+  <app-dropdown [config]="genderData" [(ngModel)]="selectedGender" name="gender">
+  </app-dropdown>
+  <br />
+  <button type="submit">Submit</button>
+</form>
+
+<h3>Reactive Driven Approach</h3>
+<form [formGroup]="formGroup" #ngForm="ngForm" (ngSubmit)="onSubmitReactiveDriven()">
+  <app-dropdown
+    [config]="genderData"
+    formControlName="gender"
+  >
+  </app-dropdown>
+  <br />
+  <button type="submit">Submit</button>
+</form>
